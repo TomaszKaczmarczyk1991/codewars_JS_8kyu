@@ -2,5 +2,16 @@
 // The sorting should NOT be case sensitive
 
 function sorter(textbooks) {
-    return textbooks.slice().sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+    let arr = textbooks.map((item) => ({
+      original: item,
+      lower: item.toLowerCase()
+    }));
+
+    arr.sort((a, b) => {
+      if (a.lower < b.lower) return -1;
+      if (a.lower > b.lower) return 1;
+      return 0;
+    });
+  
+    return arr.map((item) => item.original);
   }
