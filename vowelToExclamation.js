@@ -4,8 +4,7 @@ function replace(s) {
   let result = [];
 
   for(const letter of s) {
-    vowels.includes(letter) ?result.push('!') : result.push(letter)
-    
+    vowels.includes(letter) ? result.push('!') : result.push(letter);  
   }
   return result.join('');
 }
